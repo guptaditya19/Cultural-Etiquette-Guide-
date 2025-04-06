@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+header {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #2980b9;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out;
+}
+.subtitle {
+    font-size: 1.2em;
+    color: #000000;
+    margin-top: 10px;
+}
+#darkModeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 3px solid #2c3e50; 
+    border-radius: 50%; 
+    font-size: 2em;
+    cursor: pointer;
+    color: #2c3e50;
+    padding: 10px; 
+    transition: color 0.3s, transform 0.3s, border-color 0.3s;
+}
+#darkModeToggle:hover {
+    color: #1abc9c; 
+    border-color: #1abc9c; 
+    transform: rotate(180deg) scale(1.2);
+}
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.input-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+label {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #34495e;
+    display: block;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+}
+.input-group button {
+    margin-left: 10px; 
+}
+#answerType {
+    padding: 10px 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #007BFF;
+
+    color: #fbf7f7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#answerType:hover {
+    border-color: #007bff;
+    background-color: #6febeb;
+}
+input {
+    padding: 12px 15px;
+    width: 320px;
+    border: 2px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+input:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.3);
+    transform: scale(1.02);
+}
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: rgb(249, 245, 245);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, all 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+button:active {
+    background-color: #003f7f;
+    transform: scale(0.98);
+}
+button + button {
+    margin-left: 5px;
+}
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+.result-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.result-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.result-section.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #2980b9;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#result {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+ul ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.heading {
+    font-weight: 600;
+    color: #2980b9;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+li {
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+li:hover {
+    transform: translateX(5px);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #020202;
+    font-size: 0.9em;
+    border-top: 2px solid #959090; 
+    margin-top: 20px; 
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.dark-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    color: #ecf0f1;
+}
+.dark-mode header,
+.dark-mode footer {
+    background: rgba(44, 62, 80, 0.9);
+    border-color: #34495e;
+}
+.dark-mode .result-section {
+    background: #34495e;
+    color: #ecf0f1;
+}
+.dark-mode button {
+    background: #3498db;
+}
+.dark-mode button:hover {
+    background: #2980b9;
+}
+.dark-mode #darkModeToggle {
+    color: #ecf0f1;
+}
+.dark-mode #darkModeToggle:hover {
+    color: #3498db;
+}
+.dark-mode input {
+    background: #2c3e50;
+    border-color: #34495e;
+    color: #ecf0f1;
+}
+.dark-mode input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode .heading {
+    color: #3498db;
+}
+.dark-mode .subtitle,
+.dark-mode label {
+    color: #bdc3c7;
+}
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+#result li {
+    font-size: 1.1em;
+    line-height: 1.8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
+#result li::before {
+    content: "• ";
+    color: #2980b9;
+    margin-right: 5px;
+}
+#result li {
+    font-size: 1.1em;
+    line-height: 1.8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
+#result li::before {
+    content: "• ";
+    color: #2980b9;
+    margin-right: 5px;
+}
